@@ -8,6 +8,10 @@ More focus on handson not on just theory.
 
 The goal is to be consistent, go deeper into DevOps, and learn & share regularly.
 
+What is your understanding of DevOps and Cloud Engineering? -> dev + ops combination and there is too much confusion between dev team and ops team to avoid this confusion use devops.
+Why you are starting learning DevOps & Cloud?  - Exploried many tools and techonologies then stuck at this point ( devops).
+Where do you want to reach?  - to be a good in devops releated tech and i want to achive that noone pointing on me you are not good in this tech or any othere in real life activity also.
+How you will stay consistent every single day? - stared #90DaysOfDevOps challage to post it on linkedin whatever i learn.
 
 
 For the next 90 days, I will : --
