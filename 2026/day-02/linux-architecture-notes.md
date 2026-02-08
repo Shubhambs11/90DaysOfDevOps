@@ -1,59 +1,40 @@
-## Boot Process (How Linux Starts)
+# How Linux Works Under the Hood 🐧
 
-BIOS/UEFI
+This document explains **how Linux works internally**, from booting to process execution, in a simple and structured way.
 
-Powers on hardware
+---
 
-Loads the bootloader
+## 1. Linux Boot Process
 
-Bootloader (GRUB)
+1. **BIOS / UEFI**
+   - Initializes hardware
+   - Loads the bootloader
 
-Lets you choose OS
+2. **Bootloader (GRUB)**
+   - Selects the OS
+   - Loads the Linux kernel into memory
 
-Loads Linux kernel into memory
+3. **Kernel Initialization**
+   - Detects CPU, RAM, disks, devices
+   - Mounts root filesystem
+   - Starts the first process (`systemd` or `init`, PID = 1)
 
-Kernel Initialization
+4. **Init System (systemd)**
+   - Starts services (network, GUI, SSH, etc.)
+   - Brings system to usable state
 
-Detects CPU, RAM, disks, drivers
+---
 
-Mounts root filesystem
+## 2. Linux Kernel (Core of the OS)
 
-Starts the first process: init / systemd (PID = 1)
+The **kernel** runs in *kernel space* and has full access to hardware.
 
-systemd (init system)
+### Kernel Responsibilities
+- **Process Management**
+- **Memory Management**
+- **Device Drivers**
+- **File System Management**
+- **Networking**
+- **System Calls**
 
-Starts services (network, GUI, SSH, etc.)
-
-Brings system to usable state
-
-## Kernel (The Core of Linux)
-
-The kernel is the boss. It runs in kernel mode (full hardware access).
-
-Kernel Responsibilities
-
-Process Management
-
-Creates processes (fork)
-
-Schedules CPU time (scheduler)
-
-Memory Management
-
-Virtual memory
-
-Paging & swapping
-
-Device Drivers
-
-Keyboard, disk, network, USB
-
-File System
-
-ext4, xfs, btrfs
-
-System Calls
-
-Interface between user programs & kernel
-
-👉 User programs never access hardware directly.
+---
