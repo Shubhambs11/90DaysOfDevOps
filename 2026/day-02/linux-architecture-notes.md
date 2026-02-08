@@ -155,31 +155,225 @@ A **process** is a running instance of a program. Linux provides a powerful and 
 
 ---
 
-## 1. What Is a Process?
+## Linux Process Creation and Management – In-Depth Explanation 🐧
 
-A Linux process consists of:
-- Program code (text segment)
-- Data and heap
-- Stack
-- Open file descriptors
-- Process ID (PID)
-- Process state
-
-Each process runs in its own **virtual address space**.
+This document provides a **deep, kernel-level explanation** of how Linux creates, schedules, manages, and terminates processes.  
+It is suitable for **OS internals study, interviews, and system-level understanding**.
 
 ---
 
-## 2. Process Creation
+## 1. What Is a Process in Linux?
 
-Linux uses a **fork–exec model**.
+A **process** is an executing program along with all the resources required to run it.
 
-### Step 1: `fork()`
-- Creates a new process by duplicating the parent
+Each process consists of:
+- Executable code (text segment)
+- Data segment (global/static variables)
+- Heap (dynamic memory)
+- Stack (function calls, local variables)
+- CPU context (registers, program counter)
+- Kernel metadata
+
+In the kernel, a process is represented by a `task_struct`.
+
+---
+
+## 2. Process Representation: `task_struct`
+
+Every process has a **Process Control Block (PCB)** implemented as `task_struct`.
+
+Key fields include:
+- `pid` – Process ID
+- `state` – Current process state
+- `mm` – Memory descriptor
+- `files` – Open file descriptors
+- `parent` / `children`
+- `sched_entity` – Scheduler information
+- `cred` – Security credentials
+
+All `task_struct` objects are stored in the kernel’s process list.
+
+---
+
+## 3. Process Creation: fork–exec Model
+
+Linux follows a **two-step process creation model**.
+
+---
+
+## 4. `fork()` – Creating a Process
+
+`fork()` creates a new process by duplicating the calling process.
+
+### What Happens Internally
+- Kernel allocates a new `task_struct`
 - Child gets a new PID
-- Uses **Copy-On-Write (COW)** for efficiency
+- Parent and child share memory pages
+- Uses **Copy-On-Write (COW)**
 
-```c
-pid_t pid = fork();
+### Copy-On-Write (COW)
+- Parent and child share the same physical pages
+- Pages are marked read-only
+- Actual copy occurs only when a write happens
 
+This makes `fork()` extremely fast.
 
+---
+
+## 5. `exec()` – Replacing Process Image
+
+`exec()` replaces the current process memory with a new program.
+
+### What `exec()` Does
+- Destroys old address space
+- Loads new executable into memory
+- Initializes stack, heap, and registers
+- Keeps the same PID
+
+After `exec()`, the process is logically a **new program**.
+
+---
+
+## 6. Process States
+
+Linux defines several process states:
+
+| State | Description |
+|----|------------|
+| `TASK_RUNNING` | Running or ready to run |
+| `TASK_INTERRUPTIBLE` | Sleeping, can be interrupted |
+| `TASK_UNINTERRUPTIBLE` | Waiting on I/O |
+| `TASK_STOPPED` | Stopped by signal |
+| `TASK_ZOMBIE` | Terminated, not reaped |
+
+States are managed by the kernel scheduler.
+
+---
+
+## 7. Process Scheduling
+
+Linux uses the **Completely Fair Scheduler (CFS)**.
+
+---
+
+## 8. Completely Fair Scheduler (CFS)
+
+CFS models **ideal multitasking** by sharing CPU equally.
+
+### Core Concepts
+- **Virtual Runtime (vruntime)**
+- Lower vruntime → higher priority
+- Red-Black Tree stores runnable processes
+
+### Scheduling Flow
+1. Pick process with lowest vruntime
+2. Run it for a time slice
+3. Update vruntime
+4. Reinsert into tree
+
+This ensures fairness and prevents starvation.
+
+---
+
+## 9. Context Switching
+
+A **context switch** occurs when the CPU switches processes.
+
+### Steps
+- Save current CPU registers
+- Save program counter
+- Update process state
+- Load next process context
+
+Context switches are costly, so Linux minimizes them.
+
+---
+
+## 10. Parent and Child Relationship
+
+Every process (except PID 1) has a parent.
+
+- Parent tracks child status
+- Uses `wait()` or `waitpid()`
+
+If a parent exits:
+- Child becomes an **orphan**
+- Adopted by `systemd` (PID 1)
+
+---
+
+## 11. Zombie Processes
+
+A **zombie** process:
+- Has finished execution
+- Still has an entry in process table
+- Exists until parent calls `wait()`
+
+Purpose:
+- Allows parent to read exit status
+
+Too many zombies indicate a buggy parent process.
+
+---
+
+## 12. Process Termination
+
+A process can terminate by:
+- Calling `exit()`
+- Returning from `main()`
+- Receiving a fatal signal
+
+### Kernel Cleanup
+- Releases memory
+- Closes files
+- Sends exit signal to parent
+- Moves process to zombie state
+
+---
+
+## 13. Signals and Process Control
+
+Signals are asynchronous notifications.
+
+### Common Signals
+- `SIGTERM` – Graceful termination
+- `SIGKILL` – Force termination
+- `SIGSTOP` – Pause execution
+- `SIGCONT` – Resume execution
+
+Signals are handled by kernel or user-defined handlers.
+
+---
+
+## 14. Process Priorities and Nice Values
+
+Linux supports dynamic priority.
+
+- `nice` range: `-20` (highest) to `+19` (lowest)
+- Affects scheduler decision
+- Lower nice → more CPU time
+
+---
+
+## 15. Process Isolation and Security
+
+Linux isolates processes using:
+- Separate virtual memory
+- User IDs (UID/GID)
+- Capabilities
+- Namespaces (containers)
+
+This prevents processes from interfering with each other.
+
+---
+
+## 16. Summary
+
+```text
+Process = Program + Resources + Kernel Metadata
+fork()  → duplicate process
+exec()  → load new program
+CFS     → fair CPU scheduling
+Signals → control execution
+exit()  → terminate process
 
