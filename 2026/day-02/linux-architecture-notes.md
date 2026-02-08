@@ -141,13 +141,45 @@ Hardware
 
 ```
 
-### BIOS/UEFI → Bootloader → Kernel → systemd (PID 1) → User Services
+### - BIOS/UEFI → Bootloader → Kernel → systemd (PID 1) → User Services
 
 ```test
 Kernel   → Manages hardware and resources
 User Space → Runs applications and utilities
 Init System → Brings system to operational state
 ```
+
+## How Processes Are Created and Managed in Linux 🐧
+
+A **process** is a running instance of a program. Linux provides a powerful and efficient process management system handled by the **kernel**.
+
+---
+
+## 1. What Is a Process?
+
+A Linux process consists of:
+- Program code (text segment)
+- Data and heap
+- Stack
+- Open file descriptors
+- Process ID (PID)
+- Process state
+
+Each process runs in its own **virtual address space**.
+
+---
+
+## 2. Process Creation
+
+Linux uses a **fork–exec model**.
+
+### Step 1: `fork()`
+- Creates a new process by duplicating the parent
+- Child gets a new PID
+- Uses **Copy-On-Write (COW)** for efficiency
+
+```c
+pid_t pid = fork();
 
 
 
