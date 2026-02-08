@@ -1,36 +1,27 @@
 # 🚀 90 Days DevOps & Cloud Learning Plan
 
 ## 👤 Current Level
-- Software Engineer (1 year experience in next 3–4 months)
+- Software Engineer (11 months experience )
 - Working Professional (IT Background)
-- Hands-on exposure to multiple tools & technologies
 - Beginner → Intermediate journey in DevOps
 
 ---
 
 ## 🧠 My Understanding of DevOps & Cloud Engineering
 DevOps is a combination of **Development (Dev)** and **Operations (Ops)**.  
-In real companies, there is often confusion, delays, and blame between dev and ops teams.
+In real companies, there is often confusion, project delivery delays, and blame between dev and ops teams.
 
 DevOps helps to:
 - Reduce this confusion
 - Improve collaboration
 - Automate build, test, deploy, and monitoring processes
 - Deliver software faster and more reliably
-
-Cloud Engineering provides:
-- Scalable infrastructure
-- On-demand resources
-- A strong foundation to run DevOps practices efficiently
-
 ---
 
 ## ❓ Why I’m Learning DevOps & Cloud
 - I explored many tools and technologies but felt **stuck**
 - DevOps connected everything I had learned before
 - I want to understand **how real systems work in production**
-- I want skills that matter in real-world engineering, not just theory
-
 ---
 
 ## 🎯 Where I Want to Reach
@@ -63,10 +54,10 @@ Cloud Engineering provides:
 ---
 
 ## ⏰ Time Commitment & Consistency Plan
-- Weekdays: **2–2.5 hours/day**
-- Weekends: **4–6 hours/day**
+- Weekdays: **5 hours/day**
+- Weekends: **11 hours/day**
 - Focus more on **hands-on labs & projects**, not only theory
-- Rule: **No zero days**
+- Rule: **Every day is a  grind day**
 
 ---
 
@@ -74,7 +65,7 @@ Cloud Engineering provides:
 - Started **#90DaysOfDevOps** challenge
 - Daily learning → Daily sharing on LinkedIn
 - Even small progress will be shared
-- Learning in public to build discipline and accountability
+- Learning in public to build discipline
 
 ---
 
