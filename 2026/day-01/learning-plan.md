@@ -1,29 +1,91 @@
-Now, I have a 1 year of exprience as a software engineer in next 3-4 months -
+# 🚀 90 Days DevOps & Cloud Learning Plan
 
-I will be learn all about Devops 
-Grind Myself towords my gole to being constient
-learn and share in public on linkedin.
-More focus on handson not on just theory.
+## 👤 Current Level
+- Software Engineer (1 year experience in next 3–4 months)
+- Working Professional (IT Background)
+- Hands-on exposure to multiple tools & technologies
+- Beginner → Intermediate journey in DevOps
 
+---
 
-The goal is to be consistent, go deeper into DevOps, and learn & share regularly.
+## 🧠 My Understanding of DevOps & Cloud Engineering
+DevOps is a combination of **Development (Dev)** and **Operations (Ops)**.  
+In real companies, there is often confusion, delays, and blame between dev and ops teams.
 
-What is your understanding of DevOps and Cloud Engineering? -> dev + ops combination and there is too much confusion between dev team and ops team to avoid this confusion use devops.
-Why you are starting learning DevOps & Cloud?  - Exploried many tools and techonologies then stuck at this point ( devops).
-Where do you want to reach?  - to be a good in devops releated tech and i want to achive that noone pointing on me you are not good in this tech or any othere in real life activity also.
-How you will stay consistent every single day? - stared #90DaysOfDevOps challage to post it on linkedin whatever i learn.
+DevOps helps to:
+- Reduce this confusion
+- Improve collaboration
+- Automate build, test, deploy, and monitoring processes
+- Deliver software faster and more reliably
 
+Cloud Engineering provides:
+- Scalable infrastructure
+- On-demand resources
+- A strong foundation to run DevOps practices efficiently
 
-For the next 90 days, I will : --
+---
 
-Learn Linux & Shell Scripting, Networking, Git/GitHub, and Docker
+## ❓ Why I’m Learning DevOps & Cloud
+- I explored many tools and technologies but felt **stuck**
+- DevOps connected everything I had learned before
+- I want to understand **how real systems work in production**
+- I want skills that matter in real-world engineering, not just theory
 
-Deep dive into Automation (Github Actions, Jenkins) 
+---
 
-Explore Scaling (Cloud, Kubernetes)
+## 🎯 Where I Want to Reach
+- Become **strong and confident** in DevOps-related technologies
+- Build skills so solid that **no one can question my capability**
+- Apply DevOps not only in work, but also in **real-life problem-solving**
+- Grow as a reliable, disciplined engineer
 
-Focus on Time-to-Market Reduction (Terraform, Ansible)
+---
 
-Work on Observability & Reliability (Grafana, Prometheus)
+## 🔥 My 90-Day Learning Goals
+| Goal No. | Goal Description |
+|--------|------------------|
+| 1️⃣ | Build strong foundations in DevOps & Cloud |
+| 2️⃣ | Create hands-on projects using real tools |
+| 3️⃣ | Learn in public and share consistently on LinkedIn |
 
-Build hands-on projects and share my learning regularly.
+---
+
+## 🛠️ Core DevOps Skills I Will Build
+- 🐧 Linux & Shell Scripting  
+- 🌐 Networking Fundamentals  
+- 🔧 Git & GitHub  
+- 🐳 Docker & Containers  
+- ⚙️ CI/CD Automation (GitHub Actions, Jenkins)  
+- ☁️ Cloud & Kubernetes (Scaling & Orchestration)  
+- 🏗️ Infrastructure as Code (Terraform, Ansible)  
+- 📊 Observability & Reliability (Grafana, Prometheus)
+
+---
+
+## ⏰ Time Commitment & Consistency Plan
+- Weekdays: **2–2.5 hours/day**
+- Weekends: **4–6 hours/day**
+- Focus more on **hands-on labs & projects**, not only theory
+- Rule: **No zero days**
+
+---
+
+## 🔁 How I Will Stay Consistent
+- Started **#90DaysOfDevOps** challenge
+- Daily learning → Daily sharing on LinkedIn
+- Even small progress will be shared
+- Learning in public to build discipline and accountability
+
+---
+
+## 📌 Learning Philosophy
+- Hands-on > Theory  
+- Consistency > Motivation  
+- Depth > Speed  
+- Execution > Planning
+
+---
+
+## 🤝 90-Day Commitment
+For the next 90 days, I commit to learning DevOps with discipline, practicing daily, building real projects, and sharing my journey publicly to become a better engineer every day.
+
