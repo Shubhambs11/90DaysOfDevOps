@@ -143,4 +143,11 @@ Hardware
 
 ### BIOS/UEFI → Bootloader → Kernel → systemd (PID 1) → User Services
 
+```test
+Kernel   → Manages hardware and resources
+User Space → Runs applications and utilities
+Init System → Brings system to operational state
+```
+
+
 
