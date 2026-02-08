@@ -1,4 +1,4 @@
-# 🚀 90 Days DevOps & Cloud Learning Plan
+# 90 Days DevOps & Cloud Learning Plan
 
 ## 👤 Current Level
 - Software Engineer (11 months experience )
