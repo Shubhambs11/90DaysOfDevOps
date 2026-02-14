@@ -59,6 +59,6 @@ DevOps helps to:
 
 ---
 
-## 🤝 90-Day Commitment
+## 90-Day Commitment
 For the next 90 days, I commit to learning DevOps with discipline, practicing daily, building real projects, and sharing my journey publicly to become a better engineer every day.
 
